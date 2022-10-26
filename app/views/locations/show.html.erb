@@ -1,0 +1,14 @@
+<div class= "container">
+<h1><%= @location.title%></h1>
+<h2><%= @location.subtitle%></h2>
+<p><%= @location.description%></p>
+<p><% if @location.header_image.attached? %><%= image_tag @location.header_image, width: "200px" %> <% end %></p> <!-- active storrage img, if header imagage then show it else show nothing -->
+<br>
+<%= link_to 'Edit location', edit_location_path %>
+<br>
+<%= link_to 'Delete this location', location_path(@location), data: { turbo_method: :delete }%>
+
+<br>
+<br>
+<%= link_to 'Back to location index', locations_path %>
+</div>

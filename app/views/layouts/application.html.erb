@@ -12,8 +12,14 @@
   </head>
 
   <body>
+    <% unless @hide_header %> <!-- allows the controller to hide this render -->
     <%= render 'shared/heading' %>
+    <% end %>
+    <% unless @hide_poster %>
     <%= render 'shared/poster' %>
+    <% end %>
+    
+    <p id="notice" style="color: orange;"><%= notice %></p>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
