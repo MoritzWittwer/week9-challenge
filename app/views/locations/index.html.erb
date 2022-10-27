@@ -8,7 +8,6 @@
     <div class="location">
       <h1><%= link_to location.title, location_path(location) %></h1>
       <h2><%= location.subtitle%></h2>
-      <p><%= location.description%></p>
       <p><% if location.header_image.attached? %><%= image_tag location.header_image, width: "200px" %> <% end %></p>
       <hr>
     </div>

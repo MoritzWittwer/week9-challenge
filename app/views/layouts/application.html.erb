@@ -12,15 +12,30 @@
   </head>
 
   <body>
-    <% unless @hide_header %> <!-- allows the controller to hide this render -->
+
+    <% unless @hide_header %> <!-- allows the controller to hide this render i use it in the index-->
     <%= render 'shared/heading' %>
     <% end %>
+    
     <% unless @hide_poster %>
     <%= render 'shared/poster' %>
+    <% end %>
+
+    <% unless @hide_description%>
+    <%= render 'shared/description' %>
+    <% end %>
+
+    <% unless @hide_articles%>
+    <%= render 'shared/article_image_left' %>
+    <% end %>
+
+    <% unless @hide_articles%>
+    <%= render 'shared/article_image_right' %>
     <% end %>
     
     <p id="notice" style="color: orange;"><%= notice %></p>
     <%= yield %>
     <%= render 'shared/footer' %>
+
   </body>
 </html>
