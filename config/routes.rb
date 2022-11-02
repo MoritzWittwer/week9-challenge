@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :locations
+  resources :locations, :activities
 
   # # index
   # get '/locations', to: 'locations#index', as: 'locations'

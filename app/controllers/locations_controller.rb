@@ -35,7 +35,7 @@ class LocationsController < ApplicationController
 
   def destroy
     @location.destroy
-    redirect_to locations_url, notice: 'Locations was successfully destroyed', status: :see_other
+    redirect_to locations_url, notice: 'Location was successfully destroyed', status: :see_other
   end
 
   private
