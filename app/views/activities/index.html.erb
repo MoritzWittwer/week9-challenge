@@ -7,12 +7,15 @@
     <div class ="activities">
       <% @activities.each do |activity|%>
           <p><%= activity.location_id%></p>
-          <h2><%=link_to activity.title, activity_path(activity)%></h2>
-          <p><%= activity.description%></p>
+          <h3><%=link_to activity.title, activity_path(activity)%></h3>
+          <div class = "image-left">
           <P><% if activity.image.attached? %><%= image_tag activity.image, width: "200px"%><% end %></p>
+          </div>
+          <p><%= activity.description%></p>
           <hr>
         
       <% end %>
     </div>
-    <%= link_to 'Back to the Landing Page', root_path %>
+    <%= link_to 'Back to the Landing Page', root_path %><br>
+    <%= link_to 'Back to Locations Index', locations_path %>
 </div>

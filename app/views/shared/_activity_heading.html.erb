@@ -1,5 +1,9 @@
-<div class="heading">
-      <h2><%= @activity.title %></h2>
-      <p><%= @activity.description %></p>
-      <% if @activity.image.attached? %><%= image_tag @activity.image, width: "200px" %><% end %>
+<div class = "container">
+      <div class="heading">
+            <h2><%= @activity.title %></h2>
+            <div class ="image-left">
+                  <% if @activity.image.attached? %><%= image_tag @activity.image, width: "200px" %><% end %>
+            </div>
+            <p><%= @activity.description %></p>
+      </div>
 </div>

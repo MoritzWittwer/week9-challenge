@@ -4,9 +4,11 @@ class ActivitiesController < ApplicationController
   before_action :hidden
   before_action :hidden_activities, only: %i[index]
   before_action :hidden_location_activities
+  http_basic_authenticate_with name: 'admin', password: 'admin', except: :show
 
   def index
-    @activities = Activity.all.order('location_id asc') # order is used to order the activites by the location_id (ascending or descending ) maybe its better to use created_at?
+    @activities = Activity.all.order('location_id asc') # order is used to order the activites by the location_id
+    # (ascending or descending ) maybe its better to use created_at?
   end
 
   def show; end

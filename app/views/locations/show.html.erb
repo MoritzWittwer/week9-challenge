@@ -1,10 +1,13 @@
 <div class= "container">
-<hr>
 <%= link_to 'Edit location', edit_location_path %>
 <br>
-<%= link_to 'Delete this location', location_path(@location), data: { turbo_method: :delete }%>
-
+<%= link_to 'Edit Activites', activities_path %>
 <br>
 <br>
-<%= link_to 'Back to location index', locations_path %>
+<%= link_to 'Delete this Location', location_path(@location), data: { turbo_method: :delete }%>
+<br>
+<br>
+<%= link_to 'Back to Location Index', locations_path %>
+<br>
+<%= link_to 'Back to the Landing Page', root_path %>
 </div>
