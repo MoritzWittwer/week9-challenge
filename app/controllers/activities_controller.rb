@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
   before_action :hidden_activities, only: %i[index]
 
   def index
-    @activities = Activity.all
+    @activities = Activity.all.order('location_id asc') # order is used to order the activites by the location_id (ascending or descending ) maybe its better to use created_at?
   end
 
   def show; end
