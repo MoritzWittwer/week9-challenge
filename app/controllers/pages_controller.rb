@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     # hidden_articles unless @location == 19 # TODO: how do i hide articles on a specific location id
   end
 
+  private
+
   def random_page
     @location = Location.all.sample
   end
