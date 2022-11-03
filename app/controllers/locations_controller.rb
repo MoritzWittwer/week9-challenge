@@ -65,6 +65,6 @@ class LocationsController < ApplicationController
   end
 
   def set_activity
-    @activity = Activity.first
+    @activity = Activity.where(location_id: params[:id])
   end
 end
