@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  before_action :hidden_activities
+  # before_action :set_activity, only: %i[show]
+
   def show
     random_page
 
@@ -12,4 +15,12 @@ class PagesController < ApplicationController
   def hidden_articles
     @hide_articles = true
   end
+
+  def hidden_activities
+    @hide_activities = true
+  end
+
+  # def set_activity
+  #   @activity = Activity.first
+  # end
 end

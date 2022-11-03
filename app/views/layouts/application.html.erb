@@ -33,6 +33,10 @@
     <%= render 'shared/article_image_right' %>
     <% end %>
     
+    <% unless @hide_activities%>
+    <%= render 'shared/activity_heading'%>
+    <% end %>
+
     <p id="notice" style="color: orange;"><%= notice %></p>
     <%= yield %>
     <%= render 'shared/footer' %>

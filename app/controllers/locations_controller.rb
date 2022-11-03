@@ -2,6 +2,8 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show edit update destroy]
   before_action :hidden, only: %i[index]
   before_action :hidden_articles
+  before_action :hidden_activities, except: %i[show]
+  before_action :set_activity, only: %i[show]
   http_basic_authenticate_with name: 'admin', password: 'admin', except: :show # sets up authentication for the admin tool except in the loocations#show
 
   def index
@@ -56,5 +58,13 @@ class LocationsController < ApplicationController
 
   def hidden_articles
     @hide_articles = true
+  end
+
+  def hidden_activities
+    @hide_activities = true
+  end
+
+  def set_activity
+    @activity = Activity.first
   end
 end

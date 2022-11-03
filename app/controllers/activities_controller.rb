@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
   before_action :hidden_articles
   before_action :hidden
+  before_action :hidden_activities, only: %i[index]
 
   def index
     @activities = Activity.all
@@ -43,6 +44,10 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def set_activity_title
+    @activity = Activity.find(params[:id].title)
+  end
+
   def activity_params
     params.require(:activity).permit(:title, :description, :image, :location_id)
   end
@@ -55,5 +60,9 @@ class ActivitiesController < ApplicationController
 
   def hidden_articles
     @hide_articles = true
+  end
+
+  def hidden_activities
+    @hide_activities = true
   end
 end
