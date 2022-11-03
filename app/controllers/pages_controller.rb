@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :hidden_activities
+  before_action :hidden_location_activities
   # before_action :set_activity, only: %i[show]
 
   def show
@@ -20,7 +21,7 @@ class PagesController < ApplicationController
     @hide_activities = true
   end
 
-  # def set_activity
-  #   @activity = Activity.first
-  # end
+  def hidden_location_activities
+    @hide_location_activities = true
+  end
 end

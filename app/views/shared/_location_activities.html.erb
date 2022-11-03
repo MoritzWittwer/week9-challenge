@@ -1,0 +1,11 @@
+
+<div class = "container">
+  <div class ="activities">
+      <% @location_activities.each do |location_activity|%>
+          <h2><%= location_activity.title%></h2>
+          <p><%= location_activity.description%></p>
+          <P><% if location_activity.image.attached? %><%= image_tag location_activity.image, width: "200px"%><% end %></p>
+          <hr>
+      <% end %>
+  </div>
+</div>

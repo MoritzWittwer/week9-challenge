@@ -2,8 +2,9 @@ class LocationsController < ApplicationController
   before_action :set_location, only: %i[show edit update destroy]
   before_action :hidden, only: %i[index]
   before_action :hidden_articles
-  before_action :hidden_activities, except: %i[show]
-  before_action :set_activity, only: %i[show]
+  before_action :hidden_activities
+  before_action :hidden_location_activities, except: :show
+  before_action :set_location_activities, only: %i[show]
   http_basic_authenticate_with name: 'admin', password: 'admin', except: :show # sets up authentication for the admin tool except in the loocations#show
 
   def index
@@ -64,7 +65,11 @@ class LocationsController < ApplicationController
     @hide_activities = true
   end
 
-  def set_activity
-    @activity = Activity.where(location_id: params[:id])
+  def set_location_activities
+    @location_activities = Activity.where(location_id: params[:id])
+  end
+
+  def hidden_location_activities
+    @hide_location_activities = true
   end
 end
