@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
   before_action :hidden_activities
   before_action :hidden_location_activities, except: :show
   before_action :set_location_activities, only: %i[show]
-  http_basic_authenticate_with name: 'admin', password: 'admin', except: :show # sets up authentication for the admin tool except in the loocations#show
+  http_basic_authenticate_with name: 'admin', password: 'admin', only: %i[new create edit update destroy] # sets up authentication for the admin tool except in the loocations#show
 
   def index
     @locations = Location.all
